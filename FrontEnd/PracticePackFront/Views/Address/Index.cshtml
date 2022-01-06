@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Address>
+
+@section HeadContent{
+    <link rel="stylesheet" href="~/css/box-container-style.css" />
+}
+
+@{
+    ViewData["Title"] = "View";
+}
+
+<div class="box-content">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a asp-controller="Home" asp-action="Index">Home</a>
+            </li>
+            <li class="breadcrumb-item active">
+                <a asp-controller="Address" asp-action="Index">Locations</a>
+            </li>
+        </ol>
+    </nav>
+    <h1>Locations</h1>
+    <div class="location-container box-container">
+        @foreach (var item in Model)
+        {
+            <div class="location box">
+                <ul>
+                    <li>
+                        <p><b>@Html.DisplayFor(modelItem => item.Label)</b></p>
+                    </li>
+                    <li>
+                        <p>@Html.DisplayFor(modelItem => item.Line1)</p>
+                    </li>
+                    <li>
+                        <p>
+                            @Html.DisplayFor(modelItem => item.Sector), 
+                            @Html.DisplayFor(modelItem => item.City)
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            @Html.DisplayFor(modelItem => item.Province), 
+                            @Html.DisplayFor(modelItem => item.Country)
+                        </p>
+                    </li>
+                </ul>
+                <div class="item-options">
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                </div>
+            </div>
+        }
+        <div class="add-box location">
+            <a asp-controller="Address" asp-action="Create">
+                <p class="add">+</p>
+                <p>Add Location</p>
+            </a>
+        </div>
+    </div>
+    <div class="controller-actions form-group">
+        <a asp-controller="Home" asp-action="Index">Back</a>
+    </div>
+</div>

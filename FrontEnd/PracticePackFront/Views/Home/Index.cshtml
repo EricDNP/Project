@@ -1,0 +1,40 @@
+﻿@section HeadContent{
+  <link rel="stylesheet" href="~/css/home-style.css" />
+}
+
+@{
+    ViewData["Title"] = "Home Page";
+    User user = (User)ViewData["Identity"];
+}
+
+<div class="home-content">
+    <h1>Bienvenido @user.Contact</h1>
+    <div class="user-operations">
+        <div id="personal-operation" class="operation">
+            <a asp-controller="User" asp-action="Index">
+                <img src="./img/personal-data.jpg">
+                <p>Personal Data</p>
+            </a>
+        </div>
+        <div id="payment-operation" class="operation">
+            <a asp-controller="Card" asp-action="Index">
+                <img src="./img/payment.jpg">
+                <p>Payment Method</p>
+            </a>
+        </div>
+        <div id="package-operation" class="operation">
+            <a asp-controller="Address" asp-action="Index">
+                <img src="./img/location.jpg">
+                <p>Locations</p>
+            </a>
+        </div>
+        <div id="package-operation" class="operation">
+            <a asp-controller="Package" asp-action="Index">
+                <img src="./img/packages.jpg">
+                <p>Ordered Packages</p>
+            </a>
+        </div>
+    </div>
+</div>
+
+

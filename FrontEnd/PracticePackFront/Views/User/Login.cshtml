@@ -1,0 +1,38 @@
+﻿@model PracticePackFront.Models.User
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="main-content">
+    <div class="login-container card-container">
+        <div class="container-header">
+            <h1>Login</h1>
+        </div>
+        <div class="container-body form-container row">
+            <div class="col">
+                <form asp-action="Login">
+                    <div class="form-group">
+                        <label asp-for="Mail" class="control-label"></label>
+                        <input asp-for="Mail" class="form-control" />
+                        <span asp-validation-for="Mail" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Password" class="control-label"></label>
+                        <input asp-for="Password" class="form-control" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                    <div class="form-validation text-danger" asp-validation-summary="ModelOnly"></div>
+                    <div class="form-actions form-group">
+                        <a asp-action="Register">Sing In</a>
+                        <input type="submit" value="Log In" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

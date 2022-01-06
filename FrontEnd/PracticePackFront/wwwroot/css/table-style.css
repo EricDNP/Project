@@ -1,0 +1,19 @@
+﻿.table {
+    margin-top: 40px;
+    background-color: white;
+    box-shadow: 5px 5px 10px #DDDD;
+}
+
+    .table thead {
+        background-color: var(--clr-principal);
+        color: var(--fc-principal-light);
+    }
+
+    .table thead th,
+    .table tbody td {
+        padding: 8px 20px;
+    }
+
+    .table tbody tr:hover{
+        background-color: var(--fc-principal-light);
+    }

@@ -1,0 +1,71 @@
+﻿@model PracticePackFront.Models.Package
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="box-content">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a asp-controller="Home" asp-action="Index">Home</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a asp-controller="Package" asp-action="Index">Packages</a>
+            </li>
+            <li class="breadcrumb-item active">
+                <a href="">Detail</a>
+            </li>
+        </ol>
+    </nav>
+    <h1>Package Detail</h1>
+    <div class="content-container">
+        <dl class="row">
+            <dt class = "col-sm-3">
+                @Html.DisplayNameFor(model => model.Id)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Id)
+            </dd>
+            <dt class = "col-sm-3">
+                @Html.DisplayNameFor(model => model.Description)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Description)
+            </dd>
+            <dt class = "col-sm-3">
+                @Html.DisplayNameFor(model => model.Weight)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Weight)
+            </dd>
+            <dt class = "col-sm-3">
+                @Html.DisplayNameFor(model => model.Price)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Price)1
+            </dd>
+            <dt class = "col-sm-3">
+                @Html.DisplayNameFor(model => model.DepartureDate)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.DepartureDate)
+            </dd>
+            <dt class = "col-sm-3">
+                @Html.DisplayNameFor(model => model.ArrivalDate)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.ArrivalDate)
+            </dd>
+            <dt class = "col-sm-3">
+                @Html.DisplayNameFor(model => model.Status)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Status)
+            </dd>
+        </dl>
+    </div>
+    <div class="controller-actions form-group">
+        <a asp-action="Index">Back</a>
+    </div>
+</div>

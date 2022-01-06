@@ -1,0 +1,159 @@
+﻿.account-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: start;
+    height: 80%;
+    gap: 0;
+}
+
+    .account-container .account-settings {
+        flex: 25%;
+        z-index: 1;
+    }
+
+        .account-container .account-settings ul {
+            list-style: none;
+            margin: 0;
+            border: 1px solid var(--clr-gray);
+            border-right: none;
+            z-index: 1;
+        }
+
+            .account-container .account-settings ul li {
+                padding: 10px 20px;
+            }
+
+                .account-container .account-settings ul li:not(:last-child) {
+                    border-bottom: 1px solid var(--clr-gray)
+                }
+
+                .account-container .account-settings ul li.active {
+                    background-color: white;
+                    z-index: 3;
+                    width: calc(100% + 1px);
+                }
+
+                .account-container .account-settings ul li:not(.active):hover {
+                    background-color: var(--clr-soft);
+                }
+
+    .account-container .setting-content {
+        min-height: 440px;
+        flex: 70%;
+        background-color: white;
+        border: 1px solid var(--clr-gray);
+        height: 100%;
+        padding: 30px;
+    }
+
+        .account-container .setting-content .setting {
+            display: none;
+        }
+
+            .account-container .setting-content .setting.active {
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+            }
+
+
+            .account-container .setting-content .setting h2 {
+                font-size: var(--fs-title);
+                margin-bottom: 30px;
+            }
+
+            .account-container .setting-content .setting ul {
+                border: 1px solid var(--clr-gray);
+            }
+
+                .account-container .setting-content .setting ul li {
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                    .account-container .setting-content .setting ul li > * {
+                        padding: 10px;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        padding-bottom: 20px;
+                    }
+
+                    .account-container .setting-content .setting ul li > * .data,
+                    .account-container .setting-content .setting ul li > * .no-data{
+                        min-width: 200px;
+                        max-width: 70%;
+                        padding-left: 20px;
+                    }
+
+                        .account-container .setting-content .setting ul li > * .operation {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
+
+                            .account-container .setting-content .setting ul li > * .operation button {
+                                min-width: 50px;
+                                font-size: var(--fs-little);
+                                padding: 3px 7px;
+                            }
+
+                                .account-container .setting-content .setting ul li > * .operation button:hover {
+                                    background-color: white;
+                                }
+
+                    .account-container .setting-content .setting ul li:not(:last-child) {
+                        border-bottom: 1px solid var(--clr-gray)
+                    }
+
+                    .account-container .setting-content .setting ul li .view p {
+                        margin: 0;
+                    }
+
+                    .account-container .setting-content .setting ul li .view .operation {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+
+                    .account-container .setting-content .setting ul li .edit {
+                        border-top: 1px solid var(--clr-gray);
+                        background-color: var(--clr-background);
+                        display: none;
+                    }
+
+                        .account-container .setting-content .setting ul li .edit .data .form-group:not(:last-child) {
+                            margin-bottom: 20px;
+                        }
+
+                        .account-container .setting-content .setting ul li .edit.active {
+                            display: flex;
+                        }
+
+                        .account-container .setting-content .setting ul li .edit .operation {
+                            align-items: end;
+                            gap: 20px;
+                        }
+
+                            .account-container .setting-content .setting ul li .edit .operation a {
+                                margin-bottom: 5px;
+                            }
+
+                            .account-container .setting-content .setting ul li .edit .operation a:hover {
+                                text-decoration: underline;
+                            }
+
+                            .account-container .setting-content .setting ul li .edit .operation .btn {
+                                font-size: var(--fs-little);
+                            }
+
+@media only screen and (max-width: 830px) {
+    .account-container .account-settings ul {;
+        border-right: 1px solid var(--clr-gray);
+    }
+
+        .account-container .account-settings ul li.active {
+            width: 100%;
+        }
+}

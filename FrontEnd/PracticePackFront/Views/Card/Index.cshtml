@@ -1,0 +1,57 @@
+﻿@model IEnumerable<PracticePackFront.Models.Card>
+
+@section HeadContent{
+  <link rel="stylesheet" href="~/css/box-container-style.css" />
+}
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="box-content">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a asp-controller="Home" asp-action="Index">Home</a>
+            </li>
+            <li class="breadcrumb-item active">
+                <a asp-controller="Card" asp-action="Index">Payment Method</a>
+            </li>
+        </ol>
+    </nav>
+    <h1>Payment Methods</h1>
+    <div class="payment-container box-container">
+        @foreach (var item in Model)
+        {
+            <div class="payment box">
+                <ul>
+                    <li>
+                        <p><b>@Html.DisplayNameFor(model => model.CardHolder)</b></p>
+                        <p>@Html.DisplayFor(modelItem => item.CardHolder)</p>
+                    </li>
+                    <li>
+                        <p><b>@Html.DisplayNameFor(model => model.Number)</b></p>
+                        <p>@Html.DisplayFor(modelItem => item.Number)</p>
+                    </li>
+                    <li>
+                        <p><b>@Html.DisplayNameFor(model => model.Expiration)</b></p>
+                        <p>@Html.DisplayFor(modelItem => item.Expiration)</p>
+                    </li>
+                </ul>
+                <div class="item-options">
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                </div>
+            </div>
+        }
+        <div class="add-box">
+            <a asp-controller="Card" asp-action="Create">
+                <p class="add">+</p>
+                <p>Add Payment</p>
+            </a>
+        </div>
+    </div>
+    <div class="controller-actions form-group">
+        <a asp-controller="Home" asp-action="Index">Back</a>
+    </div>
+</div>
